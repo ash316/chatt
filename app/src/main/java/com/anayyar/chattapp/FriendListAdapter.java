@@ -17,7 +17,7 @@ public class FriendListAdapter extends ArrayAdapter<FriendDetails> {
     private final FriendDetails[] values;
 
     public FriendListAdapter(Context context, FriendDetails[] values) {
-        super(context, -1, values);
+        super(context, values.length, values);
         this.context = context;
         this.values = values;
     }

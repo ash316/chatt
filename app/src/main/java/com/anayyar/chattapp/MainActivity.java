@@ -17,22 +17,20 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        XMPPCLient client = new XMPPCLient("ashish");
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
         toolbar.setTitle("CHATT");
         //setSupportActionBar(toolbar);
 
         FriendDetails[] values = new FriendDetails[] {
-                new FriendDetails("", "Ashish","Available"),
-                new FriendDetails("", "Parul","Away"),
-                new FriendDetails("", "Bhanu","Inactive"),
-                new FriendDetails("", "Sumit","Available"),
-                new FriendDetails("", "Parag","Offline"),
-                new FriendDetails("", "Kunal","Available")
-
+                new FriendDetails("", client.getRooster(),"Available"),
+                new FriendDetails("", client.getRooster(),"Available"),
+                new FriendDetails("", client.getRooster(),"Available")
         };
         ArrayAdapter adapter = new FriendListAdapter(this, values);
         setListAdapter(adapter);
+
     }
 
     @Override
